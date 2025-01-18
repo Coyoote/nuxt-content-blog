@@ -1,19 +1,13 @@
 <template>
-  <div class="flex min-h-[100vh] flex-col lg:flex-row lg:p-8">
-    <Sidebar />
-    <div
-      class="order-1 flex flex-grow basis-3/4 pt-5 md:p-5 lg:order-2 lg:p-0 lg:pl-5"
-    >
-      <div class="gap-4.5 flex flex-grow flex-col">
-        <header class="mb-5 ml-auto w-full">
-          <h1 class="mb-0 ml-auto w-fit text-secondary-neutral-5">
-            Header test
-          </h1>
-        </header>
-        <main class="flex-grow">
-          <slot />
-        </main>
-      </div>
+  <div>
+    <Header />
+    <div class="m-4 grid min-h-screen sm:grid-cols-[15%,70%,15%]">
+      <LeftSidebar class="col-start-1 col-end-2" />
+      <main class="col-start-2 col-end-3 max-h-screen overflow-auto px-4">
+        <slot />
+      </main>
+      <RightSidebar class="col-start-3 col-end-4" />
     </div>
+    <Footer />
   </div>
 </template>
